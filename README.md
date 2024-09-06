@@ -20,9 +20,10 @@ To set up a Jenkins pipeline that performs the following actions:
 ## Prerequisites
 
 ### Server Installation
-- **Tomcat**: Tomcat should be installed and accessible from Jenkins. You can deploy using SCP, FTP, or direct file copying if Jenkins and Tomcat are on the same server.
-- **Jenkins** : Jenkins should be installed and accessible.
-- **Maven** : Maven should be installed and accessible from Jenkins
+- **Java**: Java installation for war deployment. ![Installation](https://github.com/manishktomar/bash-scripts)
+- **Tomcat**: Tomcat should be installed and accessible from Jenkins. You can deploy using SCP, FTP, or direct file copying if Jenkins and Tomcat are on the same server. ![Installation](https://github.com/manishktomar/bash-scripts)
+- **Jenkins** : Jenkins should be installed and accessible. ![Installation](https://github.com/manishktomar/bash-scripts)
+- **Maven** : Maven should be installed and accessible from Jenkins ![Installation](https://github.com/manishktomar/bash-scripts)
 
 ### Jenkins Plugin Installation and Setup
 - **Java Setup**: 
