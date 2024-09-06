@@ -1,7 +1,7 @@
 # Deploy Artifacts on a Tomcat Server
 This configuration ensures that Jenkins automatically triggers a build when code is pushed to GitHub, and the resulting .war file is deployed to your Tomcat server.
 
-![image](https://github.com/user-attachments/assets/0cfc0b54-673b-4c4f-b885-f108723f0e7b)
+![image](https://github.com/user-attachments/assets/48fd45af-2bdc-4aac-a0a2-2ffa6ebf7b59)
 
 ## Setup CI/CD with GitHub, Jenkins, Maven & Tomcat.
 - Setup Jenkins
@@ -33,6 +33,6 @@ To set up a Jenkins pipeline that performs the following actions:
   ![image](https://github.com/user-attachments/assets/fa6666fc-da5c-44b8-b9ef-d832035ec21b)
 
 - **Credentials**: Credentials for GitHub and Tomcat should be configured in Jenkins.
-- **Pipeline: Stage View Plugin**: 
+- **Pipeline: Stage View Plugin**: Jenkins is used to visualize the stages in your pipeline, making it easier to monitor and manage your CI/CD processes.
 - **Pipeline: Utility Steps Plugin** : it provides the findFiles step.
 
