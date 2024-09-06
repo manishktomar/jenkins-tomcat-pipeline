@@ -1,0 +1,51 @@
+pipeline {
+    agent any
+
+    triggers {
+        // Trigger the build automatically when changes are pushed to GitHub
+        githubPush()
+    }
+	
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git url: 'https://github.com/manishktomar/hello-world.git', branch: 'master'
+            }
+        }
+
+        stage('Build with Maven') {
+            steps {
+                // Assuming Maven is installed and available in the Jenkins environment
+                sh '/opt/apache-maven-3.9.6/bin/mvn clean install'
+            }
+        }
+
+        stage('Deploy to Tomcat') {
+            steps {
+                script {
+                    // Copy the WAR file to the Tomcat webapps directory
+					def warFile = findFiles(glob: '**/target/*.war')[0].path
+                    def tomcatWebapps = '/opt/tomcat1/webapps/'
+                    
+                    sh "cp ${warFile} ${tomcatWebapps}"
+                    
+                    // Optionally, restart Tomcat to deploy the new WAR
+                    def tomcatShutdown = '/opt/tomcat1/bin/shutdown.sh'
+                    def tomcatStartup = '/opt/tomcat1/bin/startup.sh'
+                    
+                    sh "${tomcatShutdown}"
+                    sh "${tomcatStartup}"
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            echo 'Build and Deployment Successful'
+        }
+        failure {
+            echo 'Build or Deployment Failed'
+        }
+    }
+}
