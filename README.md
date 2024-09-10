@@ -5,7 +5,7 @@ This configuration ensures that Jenkins automatically triggers a build when code
 
 ## Setup CI/CD with GitHub, Jenkins, Maven & Tomcat.
 - Setup Jenkins
-- Setup & Configure Maven , Git.
+- Setup & Configure Maven, Git.
 - Setup Tomcat Server.
 - Integrating GitHub,Maven ,Tomcat Server with Jenkins
 - Create a CI and CD Job.
